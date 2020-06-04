@@ -1,11 +1,15 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './style.scss';
 
 function Day() {
   return (
-  	<div className="calendar__day">
-  		1
-  	</div>
+    <Link
+      to="/day/1"
+      className="calendar__day"
+    >
+      1
+    </Link>
   );
 }
 export default Day;
