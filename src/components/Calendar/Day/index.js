@@ -5,7 +5,7 @@ import './style.scss';
 function Day() {
   return (
     <Link
-      to="/day/1"
+      to="/day/01.04.2020"
       className="calendar__day"
     >
       1

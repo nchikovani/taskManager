@@ -7,6 +7,7 @@ import Day from '../Day';
 import Things from '../Things';
 
 function App() {
+  
   return (
     <div className="page">
       <header className="header"/>
