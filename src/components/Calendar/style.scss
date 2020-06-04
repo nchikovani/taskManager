@@ -1,0 +1,19 @@
+@import '../../styles/vars';
+.calendar {
+  position: relative;
+}
+.calendar__change-month-buttons {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.calendar__change-month-button {
+  width: 2em;
+  height: 2em;
+  background: $grey-color;
+  color: #555;
+  cursor: pointer;
+  &:first-child {
+  	margin-right: 1em;
+  }
+}

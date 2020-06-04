@@ -1,0 +1,9 @@
+@import '../../styles/vars';
+.navigation__list {
+  display: flex;
+  margin-bottom: 2em;
+  color: $link-color;
+}
+.navigation__item-list {
+  margin-left: auto;
+}

@@ -2,31 +2,32 @@
 @import '../../styles/base';
 
 .page {
-	background: #ccc;
+  background: #eee;
+  min-width: $min-width;
 }
 .page-content {
-	margin: 0 auto;
-	max-width: $max-width-l;
-	min-width: $min-width;
-	padding: 1em;
-	min-height: 94vh;
-	
+  margin: 0 auto;
+  max-width: $max-width-l;
+  min-width: $min-width;
+  padding: 1em;
+  min-height: 94vh;
+  
 }
 header, footer {
-	height: 50px;
-	width: 100%;
-	min-width: $min-width;
-	background: $accent-color;
+  height: 50px;
+  width: 100%;
+  min-width: $min-width;
+  background: $accent-color;
 }
 
-@media screen and (max-width: $max-width-s) {
-	.page {
-		font-size: 70%;	
-	}
-	
+@media screen and (max-width: $max-width-m) {
+  .page {
+    font-size: 70%;  
+  }
+  
 }
-@media screen and (max-width: $max-width-xs) {
-	.page {
-		font-size: 60%;	
-	}
+@media screen and (max-width: $max-width-s) {
+  .page {
+    font-size: 60%;  
+  }
 }

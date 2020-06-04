@@ -1,13 +1,15 @@
 import React from 'react';
 import './style.scss';
-// import '../Header'
+import Navigation from '../Navigation';
+import Calendar from '../Calendar';
 
 function App() {
   return (
     <div className="page">
       <header className="header"/>
       <div className="page-content">
-        ПРЕВЭЭЭТ!!1
+        <Navigation/>
+        <Calendar/>
       </div>
       <footer className="footer"/>
     </div>
@@ -15,3 +17,4 @@ function App() {
 }
 
 export default App;
+
