@@ -11,10 +11,4 @@
   grid-template-columns: repeat(7, 1fr);
   
   grid-gap: 1em;
-  li {
-  	background: $grey-color;
-  	&:first-child {
-  	  grid-column-start: 3;	  
-  	}
-  }
 }

@@ -5,12 +5,16 @@ import Button from '../generic/Button'
 import './style.scss';
 
 function Day() {
-  const {id} = useParams();
+  const {id} = useParams(),
+    date = new Date(id),
+    month = date.getMonth(),
+    day = date.getDate(),
+    monthNames = ['Января', 'Февраля', 'Мара', 'Апреля', 'Мая', 'Июня', 'Июля', 'Авгуса', 'Сентября', 'Октября', 'Ноября', 'Декабрья'];
   return (
     <div className="day">
       <div className="day__header">
-        <h2>{"Дела на "+id}</h2>
-        <Button><i class="fas fa-plus"></i></Button>
+        <h2>{"Дела на "+ day + " " + monthNames[month]}</h2>
+        <Button><i className="fas fa-plus"></i></Button>
       </div>
       <div className="day__container">
         <ul className="day__list-time">

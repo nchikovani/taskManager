@@ -2,8 +2,20 @@
 .calendar {
   position: relative;
 }
+.calendar__animated-container {
+	overflow: hidden;
+	// height: auto;
+	position: relative;
+}
+.list-months {
+	// position: absolute;
+	width: 100%;
+	// top: 0;
+	// left: 0;
+}
 .calendar__change-month-buttons {
   position: absolute;
+  z-index: 2;
   right: 0;
   top: 0;
 }
