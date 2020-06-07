@@ -10,9 +10,10 @@ function Month({month, today}) {
   for (let i =1; i <= daysCount; i++) {
     let thisDay = false;
     const date = `${month.getFullYear()}-${month.getMonth()+1}-${i}`;
+
     if (month.getFullYear() === today.getFullYear() &&
         month.getMonth() === today.getMonth() &&
-        i === today.getMonth()) {
+        i === today.getDate()) {
       thisDay = true;
     }
     arrayOfDays.push( 

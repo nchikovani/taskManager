@@ -90,7 +90,6 @@ class Calendar extends React.Component {
     });
   }
   render() {
-
     return (
       <div className="calendar">
         <div className="calendar__change-month-buttons">

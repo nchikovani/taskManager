@@ -2,6 +2,8 @@ import React from 'react';
 import {useParams} from 'react-router-dom';
 import Thing from '../Thing';
 import Button from '../generic/Button'
+import store from '../../store';
+import {openModal} from '../../actions';
 import './style.scss';
 
 function Day() {
@@ -9,12 +11,14 @@ function Day() {
     date = new Date(id),
     month = date.getMonth(),
     day = date.getDate(),
-    monthNames = ['Января', 'Февраля', 'Мара', 'Апреля', 'Мая', 'Июня', 'Июля', 'Авгуса', 'Сентября', 'Октября', 'Ноября', 'Декабрья'];
+    monthNames = ['Января', 'Февраля', 'Мара', 'Апреля', 'Мая', 'Июня', 'Июля', 'Авгуса', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
   return (
     <div className="day">
       <div className="day__header">
         <h2>{"Дела на "+ day + " " + monthNames[month]}</h2>
-        <Button><i className="fas fa-plus"></i></Button>
+        <Button
+          onClick={()=>store.dispatch(openModal())}
+        ><i className="fas fa-plus"></i></Button>
       </div>
       <div className="day__container">
         <ul className="day__list-time">
