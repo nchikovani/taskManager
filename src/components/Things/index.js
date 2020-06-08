@@ -12,7 +12,7 @@ function Things() {
 	  <div className="things__header">
 	  	<h2>Список дел</h2>
 	  	<Button
-			onClick={()=>store.dispatch(openModal(ModalCreateThing))}
+			onClick={()=>store.dispatch(openModal(<ModalCreateThing/>))}
 	  	>Создать дело</Button>
 	  </div>
 	  <ul className="things__list-things">

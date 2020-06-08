@@ -1,6 +1,6 @@
 const initial = {
 	isOpen: false, 
-	Child: null,
+	child: null,
 }
 
 function modal(state=initial, action) {
@@ -8,12 +8,12 @@ function modal(state=initial, action) {
     case 'openModal':
       return {
       	isOpen: true,
-      	Child: action.Child,
+      	child: action.child,
       };
     case 'closeModal':
       return {
       	isOpen: false,
-      	Child: null,
+      	child: null,
       };
     default:
       return state;

@@ -1,0 +1,27 @@
+
+.modal-create-thing__thing-name {
+  width: 100%;
+  margin-bottom: 0.9em;
+}
+.modal-create-thing__create-points {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.7em;
+}
+.modal-create-thing__point-list {
+  margin-bottom: 1em;
+  li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.7em;
+    .input {
+      width: 85%;
+    }
+  }
+}
+.modal-create-thing__add-thing { 
+  display: block;
+  margin-left: auto;
+}

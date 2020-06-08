@@ -1,10 +1,10 @@
 
 
-export function openModal(Child) {
+export function openModal(child) {
 
   return {
     type: 'openModal',
-    Child,
+    child,
   }
 }
 export function closeModal() {

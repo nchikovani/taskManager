@@ -9,7 +9,7 @@ import Things from '../Things';
 import Modal from '../Modal';
 import {connect} from 'react-redux';
 
-function App({modalIsOpen, ModalChild}) {
+function App({modalIsOpen, modalChild}) {
 
   return (
     <div className="page">
@@ -41,7 +41,7 @@ function App({modalIsOpen, ModalChild}) {
       <footer className="footer"/>
       <Modal
         isOpen={modalIsOpen}
-        Child={ModalChild}
+        child={modalChild}
       />
     </div>
   );
@@ -49,14 +49,14 @@ function App({modalIsOpen, ModalChild}) {
 
 App.propTypes = {
   modalIsOpen: PropTypes.bool,
-  ModalChild: PropTypes.elementType,
+  modalChild: PropTypes.element,
 }
 
 const mapStateToProps=function(store) {
   
   return {
     modalIsOpen: store.modal.isOpen,
-    ModalChild: store.modal.Child 
+    modalChild: store.modal.child 
 
   }
 }
