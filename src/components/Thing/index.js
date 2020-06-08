@@ -1,19 +1,25 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './style.scss';
 
-function Thing() {
-
+function Thing({id, text, points}) {
   return (
-    <div className="thing">
-    	<h3>Сделать дела</h3>
-    	<ul className="thing__list-points">
-    		<li className="point">Дело 1</li>
-    		<li className="point">Дело 2</li>
-    		<li className="point">Дело 3</li>
-    		<li className="point">Дело 4</li>
-    	</ul>
-    </div>
+    <li className="thing">
+      <h3>{text}</h3>
+      <ul className="thing__list-points">
+        {
+          points.map(point => 
+            <li key={point.id} className="point">{point.text}</li>
+          )
+        }
+      </ul>
+    </li>
   );
 }
-
-export default Thing;
+const mapStateToProps = function(store, ownProps) {
+    const points = store.points.filter((point) => point.thingId === ownProps.id);
+    return {
+        points,
+    }
+}
+export default connect(mapStateToProps)(Thing);

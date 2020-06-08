@@ -26,6 +26,6 @@ function Modal({isOpen, child}) {
 
 Modal.propTyeps = {
 	isOpen: PropTypes.bool,
-	Child: PropTypes.element,
+	child: PropTypes.element,
 }
 export default Modal;

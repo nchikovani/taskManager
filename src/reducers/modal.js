@@ -5,12 +5,12 @@ const initial = {
 
 function modal(state=initial, action) {
   switch (action.type) {
-    case 'openModal':
+    case 'OPEN_MODAL':
       return {
       	isOpen: true,
       	child: action.child,
       };
-    case 'closeModal':
+    case 'CLOSE_MODAL':
       return {
       	isOpen: false,
       	child: null,

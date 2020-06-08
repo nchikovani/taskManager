@@ -2,28 +2,24 @@ import React from 'react';
 import './style.scss';
 import Input from '../../generic/Input';
 import Button from '../../generic/Button';
+import store from '../../../store';
+import {addThing, addPoint, closeModal} from '../../../actions'
 
 class ModalCreateThing extends React.Component {
   constructor() {
     super();
     this.state = {
       points: [],
-      thing: {
-      	id: null,
-      	text: "",
-      },
+      thingText: "",
     };
     this.lastPointId = 0;
     this.addPoint = this.addPoint.bind(this);
+    this.saveThing = this.saveThing.bind(this);
   }
   thingNameHandler(e) {
   	const target = e.target;
-  	this.setState(function(state, props) {
-  	  const thing = Object.assign({}, state.thing);
-  	  thing.text = target.value;
-  	  return {
-  	  	thing,
-  	  }
+  	this.setState({
+  	  thingText: target.value,
   	});
   }
   addPoint() {
@@ -56,13 +52,18 @@ class ModalCreateThing extends React.Component {
       }
   	});
   }
+  saveThing() {
+  	const thingId = store.dispatch(addThing(this.state.thingText)).id;
+  	this.state.points.forEach((point) => store.dispatch(addPoint(thingId, point.text)));
+  	store.dispatch(closeModal());
+  }
   render() {
     return (
       <React.Fragment>
         <Input
           className="modal-create-thing__thing-name"
           placeholder={"Введите название дела"}
-          value={this.state.thing.text}
+          value={this.state.thingText}
           onChange={(e)=>this.thingNameHandler(e)}
         />
         <div className="modal-create-thing__create-points">
@@ -75,7 +76,7 @@ class ModalCreateThing extends React.Component {
           {this.state.points.map((point)=>
             <li key={point.id}>
 	          <Input
-	            placeholder="Введите названия пункта"
+	            placeholder="Введите название пункта"
 	            value={point.text}
 	            onChange={(e)=>this.pointNameHandler(e, point.id)}
 	          />
@@ -87,6 +88,7 @@ class ModalCreateThing extends React.Component {
         </ul>
         <Button
           className="modal-create-thing__add-thing"
+          onClick={this.saveThing}
         >Добавить</Button>
       </React.Fragment>
     );
