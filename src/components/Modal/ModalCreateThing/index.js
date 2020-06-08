@@ -50,8 +50,7 @@ class ModalCreateThing extends React.Component {
   }
   removePoint(id) {
   	this.setState(function(state, props) {
-  	  const points = state.points.slice();
-      points.splice(points.indexOf((point)=>point.id === id));
+  	  const points = state.points.filter(point => point.id !== id);
       return {
         points,
       }
