@@ -2,8 +2,6 @@ import React from 'react';
 import './style.scss';
 import Input from '../../generic/Input';
 import Button from '../../generic/Button';
-import store from '../../../store';
-import {addThing, addPoint, closeModal} from '../../../actions'
 
 class ModalCreateThing extends React.Component {
   constructor() {
@@ -14,7 +12,6 @@ class ModalCreateThing extends React.Component {
     };
     this.lastPointId = 0;
     this.addPoint = this.addPoint.bind(this);
-    this.saveThing = this.saveThing.bind(this);
   }
   thingNameHandler(e) {
   	const target = e.target;
@@ -52,11 +49,7 @@ class ModalCreateThing extends React.Component {
       }
   	});
   }
-  saveThing() {
-  	const thingId = store.dispatch(addThing(this.state.thingText)).id;
-  	this.state.points.forEach((point) => store.dispatch(addPoint(thingId, point.text)));
-  	store.dispatch(closeModal());
-  }
+  
   render() {
     return (
       <React.Fragment>
@@ -87,8 +80,8 @@ class ModalCreateThing extends React.Component {
           )}
         </ul>
         <Button
-          className="modal-create-thing__add-thing"
-          onClick={this.saveThing}
+          className="modal-button"
+          onClick={()=>this.props.saveThing(this.state.thingText, this.state.points)}
         >Добавить</Button>
       </React.Fragment>
     );

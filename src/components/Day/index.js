@@ -1,9 +1,10 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
-import Thing from '../Thing';
+import Thing from './Thing';
 import Button from '../generic/Button'
 import store from '../../store';
 import {openModal} from '../../actions';
+import ModalChooseThing from '../Modal/ModalChooseThing';
 import './style.scss';
 
 function Day() {
@@ -17,7 +18,7 @@ function Day() {
       <div className="day__header">
         <h2>{"Дела на "+ day + " " + monthNames[month]}</h2>
         <Button
-          onClick={()=>store.dispatch(openModal())}
+          onClick={()=>store.dispatch(openModal(<ModalChooseThing date={id}/>))}
         ><i className="fas fa-plus"></i></Button>
       </div>
       <div className="day__container">
@@ -41,12 +42,8 @@ function Day() {
           <li>24:00</li>
         </ul>
         <ul className="day__list-things">
-          <li className="day__list-things__item">
-            <Thing/>
-          </li>
-          <li className="day__list-things__item">
-            <Thing/>
-          </li>
+          <Thing/>
+          <Thing/>
         </ul>
       </div>      
     </div>

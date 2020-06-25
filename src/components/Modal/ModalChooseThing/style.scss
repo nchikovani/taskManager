@@ -1,0 +1,19 @@
+@import '../../../styles/vars';
+
+.modal__button-new-thing {
+  cursor: pointer;
+  color: $link-color;
+}
+.modal-chose-thing__text {
+  display: inline-block;
+  margin-bottom: 1em;  
+}
+.modal-choose-thing__thing-list{
+  font-size: 0.8em;
+  overflow-y: scroll;
+  max-height: 60vh;
+  margin-bottom: 1em;
+  li {
+    cursor: pointer;
+  }
+}

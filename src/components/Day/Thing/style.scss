@@ -1,17 +1,11 @@
-@import '../../styles/vars';
-.thing {
+@import '../../../styles/vars';
+.thing-of-day {
 	background: $grey-color;
 	border-radius: 14px;
 	padding: 1em;
-	margin-bottom: 0.7em;
-	&:last-child {
-		margin-bottom: 0;
-	}
+	margin-bottom: 1px;
 }
-.thing_selected {
-	background: #aaa;
-}
-.thing__list-points {
+.thing-of-day__list-points {
 	list-style: disc;
 	margin-left: 2em;
 	margin-top: 0.5em;

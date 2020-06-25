@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 import Day from '../Day';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 function Month({month, today}) {
   const monthNames = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],

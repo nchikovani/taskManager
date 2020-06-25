@@ -4,7 +4,7 @@ import Thing from '../Thing';
 import store from '../../store';
 import {connect} from 'react-redux';
 import {openModal} from '../../actions';
-import ModalCreateThing from '../Modal/ModalCreateThing';
+import ModalCreateThing from '../Modal/ModalCreateThing/ModalCreateThingContainer';
 import './style.scss';
 
 function Things({things}) {
@@ -20,9 +20,9 @@ function Things({things}) {
       {
         things && things.map(thing => 
           <Thing
+            key={thing.id}
           	id={thing.id}
           	text={thing.text}
-          	key={thing.id}
           />
         )
       }

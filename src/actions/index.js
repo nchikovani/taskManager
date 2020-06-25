@@ -26,3 +26,11 @@ export function addPoint(thingId, text) {
     thingId,
   }
 }
+export function addThingOfDay(text, date) {
+  return {
+    type: 'ADD_THING_OF_DAY',
+    id: generateId(),
+    text,
+    date,
+  }
+}
