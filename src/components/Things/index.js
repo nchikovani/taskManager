@@ -23,6 +23,7 @@ function Things({things}) {
             key={thing.id}
           	id={thing.id}
           	text={thing.text}
+            displayButtonDelete={true}
           />
         )
       }

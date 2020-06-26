@@ -3,10 +3,16 @@
 	background: $grey-color;
 	border-radius: 14px;
 	padding: 1em;
-	margin-bottom: 0.7em;
-	&:last-child {
-		margin-bottom: 0;
-	}
+	margin-top: 0.7em;
+}
+.thing__flex-container {
+	display: flex;
+	justify-content: space-between;
+}
+.thing__button-delete {
+	font-size: 1.5em;
+	cursor: pointer;
+	background-color: rgba(0,0,0,0);
 }
 .thing_selected {
 	background: #aaa;
@@ -14,7 +20,6 @@
 .thing__list-points {
 	list-style: disc;
 	margin-left: 2em;
-	margin-top: 0.5em;
 	.point {
 		font-size: 1.1em;
 		margin-bottom: 0.4em;
