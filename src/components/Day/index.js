@@ -1,13 +1,14 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
-import Thing from './Thing';
+import Thing from '../Thing/ThingOfDayContainer';
 import Button from '../generic/Button'
 import store from '../../store';
+import {connect} from 'react-redux';
 import {openModal} from '../../actions';
 import ModalChooseThing from '../Modal/ModalChooseThing';
 import './style.scss';
 
-function Day() {
+function Day({thingsOfDay}) {
   const {id} = useParams(),
     date = new Date(id),
     month = date.getMonth(),
@@ -20,35 +21,26 @@ function Day() {
         <Button
           onClick={()=>store.dispatch(openModal(<ModalChooseThing date={id}/>))}
         ><i className="fas fa-plus"></i></Button>
-      </div>
-      <div className="day__container">
-        <ul className="day__list-time">
-          <li>8:00</li>
-          <li>9:00</li>
-          <li>10:00</li>
-          <li>11:00</li>
-          <li>12:00</li>
-          <li>13:00</li>
-          <li>14:00</li>
-          <li>15:00</li>
-          <li>16:00</li>
-          <li>17:00</li>
-          <li>18:00</li>
-          <li>19:00</li>
-          <li>20:00</li>
-          <li>21:00</li>
-          <li>22:00</li>
-          <li>23:00</li>
-          <li>24:00</li>
-        </ul>
-        <ul className="day__list-things">
-          <Thing/>
-          <Thing/>
-        </ul>
-      </div>      
+      </div>       
+      <ul className="day__list-things">
+        {
+          thingsOfDay && thingsOfDay.filter(thing => thing.date === id).map(thing => <Thing
+            key={thing.id}
+            id={thing.id}
+            text={thing.text}
+            checked={thing.checked}
+            displayCheckbox={true}
+            displayButtonDelete={true}
+          />)
+        }
+      </ul>     
     </div>
     
   );
 }
-
-export default Day;
+const mapStateToProps = function(store) {
+  return {
+    thingsOfDay: store.thingsOfDay, 
+  }
+}
+export default connect(mapStateToProps)(Day);

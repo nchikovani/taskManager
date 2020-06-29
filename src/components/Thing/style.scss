@@ -8,11 +8,17 @@
 .thing__flex-container {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 .thing__button-delete {
 	font-size: 1.5em;
 	cursor: pointer;
 	background-color: rgba(0,0,0,0);
+}
+.thing__checkbox {
+	margin-left: auto;
+	margin-right: 1em;
+	cursor: pointer;
 }
 .thing_selected {
 	background: #aaa;

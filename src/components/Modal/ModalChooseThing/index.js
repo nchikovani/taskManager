@@ -3,7 +3,7 @@ import './style.scss';
 import Button from '../../generic/Button';
 import {connect} from 'react-redux';
 import ModalCreateThing from '../ModalCreateThing/ModalCreateThingOfDayContainer';
-import Thing from '../../Thing';
+import Thing from '../../Thing/ThingContainer';
 import store from '../../../store';
 import {closeModal, openModal, addThingOfDay, addPoint} from '../../../actions'
 

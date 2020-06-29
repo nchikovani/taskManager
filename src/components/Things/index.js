@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../generic/Button';
-import Thing from '../Thing';
+import Thing from '../Thing/ThingContainer';
 import store from '../../store';
 import {connect} from 'react-redux';
 import {openModal} from '../../actions';

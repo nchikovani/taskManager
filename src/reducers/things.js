@@ -17,8 +17,9 @@ export default function things(state=initial, action) {
           text: action.text,
         }
       ];
-    // case action.type = 'DELETE_THING':
-    //   return state;
+    case ('DELETE_THING'):
+      const newState = state.filter(thing => thing.id !== action.id);
+      return newState;
     default:
       return state;
   }

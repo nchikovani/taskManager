@@ -18,6 +18,12 @@ export function addThing(text) {
     text,
   }
 }
+export function deleteThing(id) {
+  return {
+    type: 'DELETE_THING',
+    id,
+  }
+}
 export function addPoint(thingId, text) {
   return {
     type: 'ADD_POINT',
@@ -26,11 +32,31 @@ export function addPoint(thingId, text) {
     thingId,
   }
 }
+export function deletePoint(id) {
+  return {
+    type: 'DELETE_POINTS',
+    id,
+  }
+}
 export function addThingOfDay(text, date) {
   return {
     type: 'ADD_THING_OF_DAY',
     id: generateId(),
     text,
     date,
+    checked: false,
+  }
+}
+export function checkThingOfDay(id, value) {
+  return {
+    type: 'CHECK_THING_OF_DAY',
+    id,
+    checked: value,
+  }
+}
+export function deleteThingOfDay(id) {
+  return {
+    type: 'DELETE_THING_OF_DAY',
+    id,
   }
 }

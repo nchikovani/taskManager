@@ -19,8 +19,9 @@ export default function points(state=initial, action) {
           thingId: action.thingId,
         }
       ];
-    // case action.type = 'DELETE_POINT':
-    //   return state;
+    case ('DELETE_POINT'):
+      const newState = state.filter(point => point.id !== action.id);
+      return newState;
     default:
       return state;
   }
