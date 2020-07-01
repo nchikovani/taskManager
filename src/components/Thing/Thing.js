@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './style.scss';
 
-function Thing({id, text, points, checked, chooseHandler, selected, displayButtonDelete, displayCheckbox, deleteHandler, checkThing}) {
+function Thing({id, text, points, checked, isPast, chooseHandler, selected, displayButtonDelete, displayCheckbox, deleteHandler, checkThing}) {
   return (
     <li
-      className={classNames("thing", selected && "thing_selected")}
+      className={classNames("thing", selected && "thing_selected", isPast && (checked ? "thing_is-checked" : "thing_is-not-checked"))}
       onClick={() => typeof(chooseHandler) === "function" && chooseHandler(id)}
     >
-      <label htmlFor={"thing__checkbox"+id}>
+      <label htmlFor={"thing__checkbox"+id} className={classNames('thing__label', displayCheckbox && 'thing__label_active')}>
         <div className="thing__flex-container">
           <h3>{text}</h3>
           {displayCheckbox && 
